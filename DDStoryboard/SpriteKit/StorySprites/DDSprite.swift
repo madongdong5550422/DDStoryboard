@@ -62,11 +62,14 @@ class DDSprite: SKSpriteNode, DDAnimationMenuDelegate {
     }
     
     func numberOfAnimations() -> NSInteger {
-        return 3
+        return animations.count
     }
     
     func animationNode(index:NSInteger) -> SKNode {
-        let cellNode = SKSpriteNode(imageNamed: "cat")
+//        let cellNode = SKSpriteNode(imageNamed: "cat")
+        let cellNode = DDAnimationMenuCellNode()
+        cellNode.size = CGSize(width: 50, height: 50)
+        cellNode.animationInfo = animations[index]
         return cellNode
     }
     

@@ -19,6 +19,10 @@ class StoryboardScene: SKScene {
 //        拖动精灵的手势
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture(sender:)))
         view.addGestureRecognizer(panGesture)
+        
+//        添加点击手势
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTapGesture(sender:)))
+        view.addGestureRecognizer(tapGesture)
     }
     
     fileprivate func setUpScenery() {
@@ -37,6 +41,10 @@ class StoryboardScene: SKScene {
         bearSprite.position = CGPoint(x: 300, y: 100)
         bearSprite.playAnimation(animationName: "run")
         bearSprite.zPosition = 1;
+    }
+    
+    func handleTapGesture(sender:UITapGestureRecognizer) {
+        print("tap tap tap")
     }
     
     func handlePanGesture(sender:UIPanGestureRecognizer) {

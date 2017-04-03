@@ -12,12 +12,13 @@ import SpriteKit
 class DDAnimationMenuNode: SKNode {
     var delegate:DDAnimationMenuDelegate?
     func reloadData() {
+        removeAllChildren()
         if delegate == nil {
             print("animationMenuNode 代理未设置")
             return;
         }
-        let count = delegate?.numberOfAnimations()
-        for index in 0...Int(count!) {
+        let count = (delegate?.numberOfAnimations())! - 1
+        for index in 0...count {
             print(index)
             let cellNode = delegate?.animationNode(index: index)
             print("dongdongdongdong")
