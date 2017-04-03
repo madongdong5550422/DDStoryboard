@@ -23,6 +23,7 @@ class DDAnimationMenuNode: SKNode {
             print("dongdongdongdong")
             print(cellNode!)
             addChild(cellNode!)
+            print("test test test")
         }
         
     }
