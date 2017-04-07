@@ -36,7 +36,7 @@ class StoryboardScene: SKScene {
     fileprivate func setUpSprites() {
         let images:[UIImage] = [#imageLiteral(resourceName: "bear1"),#imageLiteral(resourceName: "bear2"),#imageLiteral(resourceName: "bear3"),#imageLiteral(resourceName: "bear4"),#imageLiteral(resourceName: "bear5"),#imageLiteral(resourceName: "bear6"),#imageLiteral(resourceName: "bear7"),#imageLiteral(resourceName: "bear8")]
         let bearAnimationInfo = DDAnimationInfo(name: "run", images:images, loopCount: 0, frameInterval: 0.1)
-        let bearSprite = DDSprite(animationInfos: [bearAnimationInfo], image: #imageLiteral(resourceName: "bear1"))
+        let bearSprite = DDSprite(_animationInfos: [bearAnimationInfo], image: #imageLiteral(resourceName: "bear1"))
         addChild(bearSprite)
         bearSprite.position = CGPoint(x: 300, y: 100)
         bearSprite.playAnimation(animationName: "run")
@@ -63,6 +63,7 @@ class StoryboardScene: SKScene {
             let moveAction = SKAction.moveBy(x: transPos.x, y: -transPos.y, duration: 0)
             sender.setTranslation(CGPoint.zero, in: sender.view)
             dragingNode?.run(moveAction)
+            dragingNode?.playRunAnimation(velocity: CGVector(dx: transPos.x, dy: transPos.y))
 
             
         case .ended:

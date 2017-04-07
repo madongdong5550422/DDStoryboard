@@ -9,15 +9,31 @@
 import UIKit
 import SpriteKit
 
+enum MoveDirection {
+    case left
+    case up
+    case right
+    case down
+}
+
 class DDSprite: SKSpriteNode {
 
-    var animations:[DDAnimationInfo] = []
+    var animationInfos:[DDAnimationInfo] = []
     
     
-    init(animationInfos:[DDAnimationInfo], image:UIImage) {
+    /// 精灵移动的动画
+    var animationLeft   :SKAction?
+    var animationUp     :SKAction?
+    var animationRight  :SKAction?
+    var animationDown   :SKAction?
+    
+    var animationDefault:SKAction?
+    
+    
+    init(_animationInfos:[DDAnimationInfo], image:UIImage) {
         let firstTexture = SKTexture(image: image)
         super.init(texture:firstTexture, color: UIColor.gray, size: CGSize(width: 100, height: 60))
-        animations = animationInfos
+        animationInfos = _animationInfos
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,7 +41,7 @@ class DDSprite: SKSpriteNode {
     }
     
     func playAnimation(animationName:String) {
-        for animation in animations {
+        for animation in animationInfos {
             if animation.name == animationName {
                 playAnimation(animation: animation)
             }
@@ -49,6 +65,43 @@ class DDSprite: SKSpriteNode {
             repeatAnimation = SKAction.repeat(oneAnimation, count: animation.loopCount)
         }
         self.run(repeatAnimation!)
+    }
+    
+    
+    func playRunAnimation(velocity:CGVector) {
+        let speed = sqrt(velocity.dx * velocity.dx + velocity.dy * velocity.dy)
+        let moveDirection:MoveDirection
+        
+        if abs(velocity.dx) > abs(velocity.dy) {
+            if velocity.dx > 0 {
+                moveDirection = MoveDirection.right
+            } else {
+                moveDirection = MoveDirection.left
+            }
+        } else {
+            if velocity.dy > 0 {
+                moveDirection = MoveDirection.down
+            } else {
+                moveDirection = MoveDirection.up
+            }
+        }
+        
+        var animation:SKAction?
+        switch moveDirection {
+        case .right:
+            animation = animationLeft
+        case .up:
+            animation = animationUp
+        case .left:
+            animation = animationLeft
+        case .down:
+            animation = animationDown
+        default:
+            animation = animationDefault
+        }
+        
+        print(moveDirection)
+        print(speed)
     }
     
 }
