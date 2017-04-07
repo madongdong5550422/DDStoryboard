@@ -30,10 +30,10 @@ class DDSprite: SKSpriteNode {
     var animationDefault:SKAction?
     
     
-    init(_animationInfos:[DDAnimationInfo], image:UIImage) {
+    init(animationInfos:[DDAnimationInfo], image:UIImage) {
         let firstTexture = SKTexture(image: image)
         super.init(texture:firstTexture, color: UIColor.gray, size: CGSize(width: 100, height: 60))
-        animationInfos = _animationInfos
+        self.animationInfos = animationInfos
     }
     
     required init?(coder aDecoder: NSCoder) {
