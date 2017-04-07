@@ -54,7 +54,6 @@ class StoryboardScene: SKScene {
             let locate = sender.location(in: sender.view)
             let transLoc = convertPoint(fromView: locate)
             dragingNode = getSpriteNode(position: transLoc)
-            dragingNode?.showAnimationsMenu()
             print("拖动开始")
         case .changed:
             if (dragingNode == nil) {

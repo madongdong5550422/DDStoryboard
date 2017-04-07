@@ -9,10 +9,9 @@
 import UIKit
 import SpriteKit
 
-class DDSprite: SKSpriteNode, DDAnimationMenuDelegate {
+class DDSprite: SKSpriteNode {
 
     var animations:[DDAnimationInfo] = []
-    var animationMenu:DDAnimationMenuNode?
     
     
     init(animationInfos:[DDAnimationInfo], image:UIImage) {
@@ -50,27 +49,6 @@ class DDSprite: SKSpriteNode, DDAnimationMenuDelegate {
             repeatAnimation = SKAction.repeat(oneAnimation, count: animation.loopCount)
         }
         self.run(repeatAnimation!)
-    }
-    
-    func showAnimationsMenu() {
-        if animationMenu == nil {
-            animationMenu = DDAnimationMenuNode()
-            animationMenu?.delegate = self
-            addChild(animationMenu!)
-        }
-        animationMenu?.reloadData()
-    }
-    
-    func numberOfAnimations() -> NSInteger {
-        return animations.count
-    }
-    
-    func animationNode(index:NSInteger) -> SKNode {
-//        let cellNode = SKSpriteNode(imageNamed: "cat")
-        let cellNode = DDAnimationMenuCellNode()
-        cellNode.size = CGSize(width: 50, height: 50)
-        cellNode.animationInfo = animations[index]
-        return cellNode
     }
     
 }

@@ -19,9 +19,6 @@
 		0FDCAD281E8C04DC00569898 /* StoryboardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDCAD271E8C04DC00569898 /* StoryboardScene.swift */; };
 		0FDCAD2B1E8C2D7D00569898 /* CGPoint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDCAD2A1E8C2D7D00569898 /* CGPoint+Extension.swift */; };
 		7EAB37C35229163853D5730C /* Pods_DDStoryboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1F3CF9552FCFE65A31955F /* Pods_DDStoryboard.framework */; };
-		A637C1DF1E9259AD0025C62C /* DDAnimationMenuCellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A637C1DE1E9259AD0025C62C /* DDAnimationMenuCellNode.swift */; };
-		A64619291E92078E00A81A48 /* DDAnimationMenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64619281E92078E00A81A48 /* DDAnimationMenuDelegate.swift */; };
-		A646192B1E9207E600A81A48 /* DDAnimationMenuNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A646192A1E9207E600A81A48 /* DDAnimationMenuNode.swift */; };
 		A6CB60F91E90377D00822F76 /* SpritesListNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CB60F81E90377D00822F76 /* SpritesListNode.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,9 +60,6 @@
 		0FDCAD2A1E8C2D7D00569898 /* CGPoint+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extension.swift"; sourceTree = "<group>"; };
 		17745F263DC4C0EABB9FB91E /* Pods-DDStoryboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDStoryboard.release.xcconfig"; path = "Pods/Target Support Files/Pods-DDStoryboard/Pods-DDStoryboard.release.xcconfig"; sourceTree = "<group>"; };
 		9E1F3CF9552FCFE65A31955F /* Pods_DDStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A637C1DE1E9259AD0025C62C /* DDAnimationMenuCellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDAnimationMenuCellNode.swift; sourceTree = "<group>"; };
-		A64619281E92078E00A81A48 /* DDAnimationMenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDAnimationMenuDelegate.swift; sourceTree = "<group>"; };
-		A646192A1E9207E600A81A48 /* DDAnimationMenuNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DDAnimationMenuNode.swift; sourceTree = "<group>"; };
 		A6CB60F81E90377D00822F76 /* SpritesListNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpritesListNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,9 +103,6 @@
 				0F3A78411E8D5EF0002BFDF8 /* DDSprite.swift */,
 				0F3A78431E8D602E002BFDF8 /* DDAnimationInfo.swift */,
 				A6CB60F81E90377D00822F76 /* SpritesListNode.swift */,
-				A64619281E92078E00A81A48 /* DDAnimationMenuDelegate.swift */,
-				A646192A1E9207E600A81A48 /* DDAnimationMenuNode.swift */,
-				A637C1DE1E9259AD0025C62C /* DDAnimationMenuCellNode.swift */,
 			);
 			path = StorySprites;
 			sourceTree = "<group>";
@@ -385,9 +376,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A64619291E92078E00A81A48 /* DDAnimationMenuDelegate.swift in Sources */,
-				A637C1DF1E9259AD0025C62C /* DDAnimationMenuCellNode.swift in Sources */,
-				A646192B1E9207E600A81A48 /* DDAnimationMenuNode.swift in Sources */,
 				0FDCAD281E8C04DC00569898 /* StoryboardScene.swift in Sources */,
 				0F5010051E8ABC17007A1A1A /* ViewController.swift in Sources */,
 				0F3A78441E8D602E002BFDF8 /* DDAnimationInfo.swift in Sources */,
